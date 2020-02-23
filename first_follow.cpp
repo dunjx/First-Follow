@@ -160,7 +160,7 @@ int main()
 				{
 					// Pronalazi se mesto na kom se, u pravilu, nalazi neterminal koji se obradjuje.
 					int pos = (*it2).find(*it);
-					while (pos != -1 && (*it2).at(pos) != (*it2).back())
+					while (pos != -1 && (int)(*it2).size() != pos+1)
 					{
 						// Uzima se podniska, od tog terminala do kraja, jer je ona potrebna za dalju proveru.
 						string next_ter = (*it2).substr(pos+1);
@@ -221,6 +221,7 @@ int main()
 			}
 		}
 	}
+	
 	
 // Ispis skupa FOLLOW.
 	cout << "FOLLOW skupovi: "<< endl;
